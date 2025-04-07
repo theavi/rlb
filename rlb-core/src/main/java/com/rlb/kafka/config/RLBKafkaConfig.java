@@ -23,4 +23,8 @@ public class RLBKafkaConfig {
     public NewTopic error() {
         return TopicBuilder.name("rlb_error").build();
     }
+    @Bean
+    public NewTopic jsonTopic() {
+        return TopicBuilder.name("json_topic").build();
+    }
 }

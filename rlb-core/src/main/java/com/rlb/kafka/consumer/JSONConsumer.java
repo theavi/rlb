@@ -12,6 +12,6 @@ public class JSONConsumer {
 
     @KafkaListener(topics = "json_topic", groupId = "rlbGroup")
     public void JsonPayloadConsume(User payload) {
-        LOGGER.info(String.format("JSON payload received ->%s", payload));
+        LOGGER.info("JSON payload received ->{}", payload);
     }
 }

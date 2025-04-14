@@ -1,5 +1,6 @@
 package com.rlb.producer;
 
+import com.rlb.payload.OrderEvent;
 import com.rlb.payload.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,14 +16,17 @@ public class JsonProducer {
 
     private KafkaTemplate<String, User> kafkaTemplate;
 
+
     public JsonProducer(KafkaTemplate<String, User> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
 
     public void publishJSOSNpPayload(User payload) {
-        LOGGER.info(String.format("Event sent ->", payload));
-        Message<User> message = MessageBuilder.withPayload(payload).setHeader(KafkaHeaders.TOPIC, "json_topic").build();
-        kafkaTemplate.send(message);
+        LOGGER.info("Event sent ->{}", payload.toString());
+       // Message<User> message = MessageBuilder.withPayload(payload).setHeader(KafkaHeaders.TOPIC, "json_topic").build();
+        kafkaTemplate.send("json_topic",payload.getId().toString(),payload);
     }
+
+
 
 }

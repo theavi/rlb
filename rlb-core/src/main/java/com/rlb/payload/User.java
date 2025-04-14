@@ -1,7 +1,10 @@
 package com.rlb.payload;
 
-import lombok.Data;
+import lombok.*;
 
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 public class User {
     private Integer id;

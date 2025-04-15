@@ -1,15 +1,18 @@
 package com.rlb.payload;
 
-import lombok.*;
-
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
 public class User {
     private Integer id;
     private String name;
     private String gender;
+
+    public User() {
+    }
+
+    public User(Integer id, String name, String gender) {
+        this.id = id;
+        this.name = name;
+        this.gender = gender;
+    }
 
     public Integer getId() {
         return id;

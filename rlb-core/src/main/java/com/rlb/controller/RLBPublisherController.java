@@ -1,8 +1,8 @@
 package com.rlb.controller;
 
 import com.rlb.payload.User;
-import com.rlb.producer.JsonProducer;
-import com.rlb.producer.RLBProducer;
+import com.rlb.kafka.producer.JsonProducer;
+import com.rlb.kafka.producer.RLBProducer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

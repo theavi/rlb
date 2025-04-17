@@ -15,7 +15,8 @@
 	<description>Relocation buddy</description>
 	<modules>
 		<module>rlb-core</module>
-	</modules>
+        <module>rlb-oc</module>
+    </modules>
 	<packaging>pom</packaging>
 	<url/>
 	<licenses>

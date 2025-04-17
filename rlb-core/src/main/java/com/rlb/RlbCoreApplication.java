@@ -12,5 +12,8 @@ public class RlbCoreApplication {
     public static void main(String[] args) {
         SpringApplication.run(RlbCoreApplication.class);
         LOGGER.info("RLB CORE STARTED");
+
     }
+
+
 }

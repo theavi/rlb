@@ -10,8 +10,9 @@ import org.springframework.stereotype.Service;
 public class JSONConsumer {
     private static Logger LOGGER = LoggerFactory.getLogger(JSONConsumer.class);
 
-    @KafkaListener(topics = "json_topic", groupId = "rlbGroup")
+    @KafkaListener(topics = "json_topic", groupId = "rlbGroup", concurrency = "2")
     public void JsonPayloadConsume(User payload) {
-        LOGGER.info(String.format("JSON payload received ->%s", payload));
+        String threadName = Thread.currentThread().getName();
+        LOGGER.info("JSON payload received ->{} by {}", payload, threadName);
     }
 }

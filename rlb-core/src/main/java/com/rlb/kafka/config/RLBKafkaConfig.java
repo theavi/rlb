@@ -15,16 +15,19 @@ public class RLBKafkaConfig {
     public NewTopic output() {
         return TopicBuilder.name("rlb_output").build();
     }
+
     @Bean
     public NewTopic input() {
         return TopicBuilder.name("rlb_input").build();
     }
+
     @Bean
     public NewTopic error() {
         return TopicBuilder.name("rlb_error").build();
     }
+
     @Bean
     public NewTopic jsonTopic() {
-        return TopicBuilder.name("json_topic").build();
+        return TopicBuilder.name("json_topic").partitions(3).build();
     }
 }
